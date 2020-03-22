@@ -1,0 +1,1 @@
+let yourArray = [ 12, "23", true, "jump", null]; // Change this line
