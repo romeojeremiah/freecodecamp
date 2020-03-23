@@ -1,0 +1,9 @@
+function reverseString(str) {
+  let toArray = str.split("");
+  toArray.reverse();
+  str = toArray.join("");
+  console.log(str);
+  return str;
+}
+
+reverseString("hello");
