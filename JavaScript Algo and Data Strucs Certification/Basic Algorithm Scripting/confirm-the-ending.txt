@@ -1,0 +1,14 @@
+function confirmEnding(str, target) {
+  let endLength = target.length;
+  console.log(endLength);
+  console.log(str.length);
+  let index = (str.length - endLength);
+  console.log(index);
+  if (str.substring(index) === target){
+    return true;
+  }else {
+    return false;
+  }
+}
+
+confirmEnding("Bastian", "n");
