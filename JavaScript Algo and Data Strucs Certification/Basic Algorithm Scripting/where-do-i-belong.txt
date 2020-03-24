@@ -1,0 +1,15 @@
+function getIndexToIns(arr, num) {
+  let index = 0;
+  let sortedArray = arr.sort();
+  console.log(sortedArray);
+  
+   for (let i = 0 ; i < sortedArray.length ; i++){
+     
+     if (num > sortedArray[i]){
+       index++;
+     }
+   }
+   return index
+}
+
+getIndexToIns([10, 20, 30, 40, 50], 35);
