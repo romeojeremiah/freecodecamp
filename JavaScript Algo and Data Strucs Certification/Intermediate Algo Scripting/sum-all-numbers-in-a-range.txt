@@ -1,0 +1,19 @@
+function sumAll(arr) {
+  //get all numbers between arr[0] and arr[1];
+  let sum = 0;
+
+  if (arr[1] > arr[0]){
+    
+    for (let i = arr[0]; i <= arr[1]; i++){
+      sum = sum + i;
+    }
+  } else if (arr[0] > arr[1]){
+    for (let i = arr[1] ; i <= arr[0]; i++){
+      sum = sum + i;
+    }
+  }
+  console.log(sum);
+  return sum;
+}
+
+sumAll([1, 4]);
