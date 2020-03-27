@@ -1,0 +1,16 @@
+const squareList = (arr) => {
+  // Only change code below this line
+  //filter and retreive an array of only positive integers
+  let posInts = arr.filter((integer) => {
+    if (integer % 1 === 0 && integer > 0){
+      return integer
+    }
+  })
+  let intSqrd = posInts.map( (posInt) => posInt * posInt);
+  
+  return intSqrd;
+  // Only change code above this line
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
