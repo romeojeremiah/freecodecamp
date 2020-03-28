@@ -1,0 +1,20 @@
+function pairElement(str) {
+  let pairsArray = [];
+  let elements = str.split('');
+  console.log(elements);
+  for(let i = 0; i < elements.length ; i++){
+    switch(elements[i]){
+      case 'A': pairsArray.push(['A', 'T']);
+      break;
+      case 'T': pairsArray.push(['T', 'A']);
+      break;
+      case 'C': pairsArray.push(['C', 'G']);
+      break;
+      case 'G': pairsArray.push(['G', 'C']);
+      break;
+    }
+  }
+  return pairsArray;
+}
+
+pairElement("GCG");

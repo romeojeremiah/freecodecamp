@@ -1,0 +1,105 @@
+function convertToRoman(num) {
+
+    let romanNumeral = '';
+    let thousands = getThousandsString(num);
+    let hundreds = getHundreds(num);
+    let tens = getTens(num);
+    let ones = getOnes(num); 
+    
+    romanNumeral += (thousands + hundreds + tens + ones);
+    
+    return romanNumeral;
+}
+
+function getThousandsString(num){
+    let thousands = parseInt(num / 1000);
+    let thousandsString = '';
+    //add M's to represent number of thousands
+    for (let i = 0; i < thousands; i++){
+        thousandsString += 'M';
+    }
+    return thousandsString;
+}
+
+function getHundreds(num){
+    let hundreds = Math.floor((num % 1000)/100);
+    let hundredsString = '';
+
+    switch(hundreds){
+        case 1: hundredsString = 'C';
+        break;
+        case 2: hundredsString = 'CC';
+        break;
+        case 3: hundredsString = 'CCC';
+        break;
+        case 4: hundredsString = 'CD';
+        break;
+        case 5: hundredsString = 'D';
+        break;
+        case 6: hundredsString = 'DC';
+        break;
+        case 7: hundredsString = 'DCC';
+        break;
+        case 8: hundredsString = 'DCCC';
+        break;
+        case 9: hundredsString = 'CM';
+        break;
+    }
+    return hundredsString;
+}
+
+function getTens(num){
+    let tens = Math.floor((num % 100 )/10);
+    let tensString = '';
+
+    switch(tens){
+        case 1: tensString = 'X';
+        break;
+        case 2: tensString = 'XX';
+        break;
+        case 3: tensString = 'XXX';
+        break;
+        case 4: tensString = 'XL';
+        break;
+        case 5: tensString = 'L';
+        break;
+        case 6: tensString = 'LX';
+        break;
+        case 7: tensString = 'LXX';
+        break;
+        case 8: tensString = 'LXXX';
+        break;
+        case 9: tensString = 'XC';
+        break;
+    }
+    return tensString;
+}
+
+function getOnes(num){
+    let ones = Math.floor(num % 10);
+    let onesString = '';
+
+    switch(ones){
+        case 1: onesString = 'I';
+        break;
+        case 2: onesString = 'II';
+        break;
+        case 3: onesString = 'III';
+        break;
+        case 4: onesString = 'IV';
+        break;
+        case 5: onesString = 'V';
+        break;
+        case 6: onesString = 'VI';
+        break;
+        case 7: onesString = 'VII';
+        break;
+        case 8: onesString = 'VIII';
+        break;
+        case 9: onesString = 'IX';
+        break;
+    }
+    return onesString;
+}
+
+console.log(convertToRoman(12));

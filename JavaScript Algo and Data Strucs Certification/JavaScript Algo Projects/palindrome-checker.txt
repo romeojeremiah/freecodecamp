@@ -1,0 +1,17 @@
+function palindrome(str) {
+  let regex = /\s|\W|_/gi
+  let noPunctOrSpace = str.replace(regex, '').toLowerCase();
+
+  let strToArrayReversed = noPunctOrSpace.split('').reverse();
+  let strReversed = strToArrayReversed.join(''); 
+  
+  if (noPunctOrSpace === strReversed){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+
+console.log(palindrome("1 eye for of 1 eye."));
