@@ -1,0 +1,23 @@
+function spinalCase(str) {
+
+  let trimmed = str.trim();
+  //add a space before a capital letter if there is none  
+  console.log(trimmed);
+  
+  //replace 'lowerCaseUppercase' pattern with 'lowerCase UpperCase' pattern
+  let spaced = trimmed.replace(/([a-z])([A-Z])/g, "$1 $2")
+  console.log(spaced);
+
+  let toLowerCase = spaced.toLowerCase();
+  console.log(toLowerCase);
+
+  let split = toLowerCase.split(/\s|\W|_|-/gi);
+  console.log(split);
+
+  let join = split.join('-');
+  console.log(join);
+
+  return join;
+}
+
+spinalCase('AllThe-small Things');

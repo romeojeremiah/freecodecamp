@@ -1,0 +1,17 @@
+function myReplace(str, before, after) {
+
+  
+  let regex = /^[A-Z]/;
+
+  let regexFound = before.match(regex);
+
+  if (regexFound !== null){
+    let ending = after.slice(1);
+    after = after.charAt(0).toUpperCase().concat(ending);
+  } 
+  
+  return str.replace(before, after);
+  
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");

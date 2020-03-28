@@ -1,0 +1,20 @@
+function translatePigLatin(str) {
+
+  let consonantRegex = /^[^aeiou]+/;
+/*  ^ - looks for following group at beginning of string.
+    [^aeiou]+ - looks for the complement of an 'a,e,i, or u' that appears more
+    than one time is a row (+);
+*/
+  let consonants = str.match(consonantRegex); 
+  
+  // puts the consonants from the regex into the consonants variable
+
+//replace beginning consonants with an empty string and return a new string,
+// concatenate the new string with the consonants on the end,
+// and then concatenate that string with 'ay
+  return consonants !== null 
+  ? str.replace(consonantRegex, "").concat(consonants).concat('ay')
+  : str.concat('way');
+}
+
+translatePigLatin("consonant");
