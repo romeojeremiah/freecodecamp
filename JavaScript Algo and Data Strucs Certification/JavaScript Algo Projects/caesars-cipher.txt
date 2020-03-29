@@ -1,0 +1,20 @@
+function rot13(str) {
+
+  let cypher = '';
+  let input =  'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let output = 'NOPQRSTUVWXYZABCDEFGHIJKLM';
+
+  for (let i =0 ; i < str.length; i++){
+    let index = input.indexOf(str[i]);
+    
+    if (index < 0){
+      cypher += str[i];
+    } else {
+      cypher += output[index];
+    }
+  }
+  
+  return cypher;
+}
+
+rot13("SERR CVMMN!");
