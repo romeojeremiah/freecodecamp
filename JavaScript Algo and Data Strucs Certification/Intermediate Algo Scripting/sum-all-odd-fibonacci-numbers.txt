@@ -1,0 +1,23 @@
+function sumFibs(num) {
+  //create the fibonacci array
+  let fibArray = [];
+  let fibOdd = 0;
+
+    fibArray[0] = 1;
+    fibArray[1] = 1;
+
+  for (let i = 2; i < num ; i++){
+    
+    fibArray[i] = fibArray[i-1] + fibArray[i-2];
+  }
+
+  fibArray.forEach((element) => {
+    if (element % 2 > 0 && element <= num){
+      fibOdd += element;
+    }
+  })
+  
+  return fibOdd;
+}
+
+sumFibs(75025);
