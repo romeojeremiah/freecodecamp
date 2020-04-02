@@ -1,22 +1,20 @@
 function orbitalPeriod(arr) {
-  //values given by FCC as starting point
   var GM = 398600.4418;
   var earthRadius = 6367.4447;
- 
-//loop through array; for each element calculate and add orbital period and delete avgAlt property
-  for(var i=0; i<arr.length; i++){
-    arr[i].orbitalPeriod = findOrbPeriod(arr[i].avgAlt);
-    delete arr[i].avgAlt;
-  }
-  
-//calculates orbital period for object around earth given avgAlt
-  function findOrbPeriod(alt){
-    var axis = alt + earthRadius;
-    var orbPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(axis, 3)/GM));
-    return orbPeriod;
-  }
-  
-  return arr;
-}
+  var a = 2 * Math.PI;
+  var newArr = [];
+  var getOrbPeriod = function(obj) {
+    var c = Math.pow(earthRadius + obj.avgAlt, 3);
+    var b = Math.sqrt(c / GM);
+    var orbPeriod = Math.round(a * b);
+    delete obj.avgAlt;
+    obj.orbitalPeriod = orbPeriod;
+    return obj;
+  };
 
-orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+  for (var elem in arr) {
+    newArr.push(getOrbPeriod(arr[elem]));
+  }
+
+  return newArr;
+}
